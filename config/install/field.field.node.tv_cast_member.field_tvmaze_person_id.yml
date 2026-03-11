@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tvmaze_person_id
+    - node.type.tv_cast_member
+entity_type: node
+field_name: field_tvmaze_person_id
+bundle: tv_cast_member
+label: 'TV Maze Person ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: integer

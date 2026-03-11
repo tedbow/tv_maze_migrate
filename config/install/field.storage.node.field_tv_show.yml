@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_tv_show
+field_name: field_tv_show
+entity_type: node
+type: entity_reference
+label: 'TV Show'
+description: ''
+settings:
+  target_type: node
+cardinality: 1
+translatable: false
+indexes: {}
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {}
+id: tv_maze
+label: 'TV Maze'
+description: 'Imports TV shows, episodes, and cast members from the TV Maze REST API.'
+source_type: 'TV Maze REST API'
+module: ~
+shared_configuration: ~

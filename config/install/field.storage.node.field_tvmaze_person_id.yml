@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_tvmaze_person_id
+field_name: field_tvmaze_person_id
+entity_type: node
+type: integer
+label: 'TV Maze Person ID'
+description: ''
+settings:
+  unsigned: true
+  size: normal
+cardinality: 1
+translatable: false
+indexes: {}
+persist_with_no_fields: false
+custom_storage: false

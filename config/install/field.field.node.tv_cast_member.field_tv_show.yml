@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tv_show
+    - node.type.tv_cast_member
+    - node.type.tv_show
+entity_type: node
+field_name: field_tv_show
+bundle: tv_cast_member
+label: 'TV Show'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      tv_show: tv_show
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

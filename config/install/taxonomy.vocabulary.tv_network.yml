@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {}
+name: 'TV Network'
+vid: tv_network
+description: 'Broadcast and streaming networks for TV shows imported from TV Maze.'
+hierarchy: 0
+weight: 0

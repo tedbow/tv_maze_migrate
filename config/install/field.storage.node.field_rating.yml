@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_rating
+field_name: field_rating
+entity_type: node
+type: decimal
+label: 'Rating'
+description: 'Average rating from TV Maze.'
+settings:
+  precision: 4
+  scale: 1
+cardinality: 1
+translatable: false
+indexes: {}
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_show_status
+field_name: field_show_status
+entity_type: node
+type: list_string
+label: 'Show Status'
+description: ''
+settings:
+  allowed_values:
+    - value: Running
+      label: Running
+    - value: Ended
+      label: Ended
+    - value: 'To Be Determined'
+      label: 'To Be Determined'
+    - value: 'In Development'
+      label: 'In Development'
+cardinality: 1
+translatable: false
+indexes: {}
+persist_with_no_fields: false
+custom_storage: false

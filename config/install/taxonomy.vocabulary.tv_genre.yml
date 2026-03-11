@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {}
+name: 'TV Genre'
+vid: tv_genre
+description: 'Genres for TV shows imported from TV Maze.'
+hierarchy: 0
+weight: 0

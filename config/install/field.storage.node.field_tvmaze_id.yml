@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_tvmaze_id
+field_name: field_tvmaze_id
+entity_type: node
+type: integer
+label: 'TV Maze ID'
+description: 'The unique ID from the TV Maze API.'
+settings:
+  unsigned: true
+  size: normal
+cardinality: 1
+translatable: false
+indexes: {}
+persist_with_no_fields: false
+custom_storage: false

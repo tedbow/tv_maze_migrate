@@ -1,0 +1,118 @@
+id: tv_maze_episodes
+label: 'TV Maze: Episodes'
+migration_group: tv_maze
+migration_tags:
+  - tv_maze
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  # Each URL returns a JSON array of episodes for one show.
+  # Keep this list in sync with tv_maze_shows urls.
+  urls:
+    - 'https://api.tvmaze.com/shows/1/episodes'
+    - 'https://api.tvmaze.com/shows/2/episodes'
+    - 'https://api.tvmaze.com/shows/3/episodes'
+    - 'https://api.tvmaze.com/shows/4/episodes'
+    - 'https://api.tvmaze.com/shows/5/episodes'
+  item_selector: ''
+  fields:
+    - name: id
+      label: 'TV Maze Episode ID'
+      selector: id
+    - name: name
+      label: 'Episode name'
+      selector: name
+    - name: season
+      label: 'Season number'
+      selector: season
+    - name: number
+      label: 'Episode number'
+      selector: number
+    - name: airdate
+      label: 'Air date'
+      selector: airdate
+    - name: runtime
+      label: 'Runtime'
+      selector: runtime
+    - name: summary
+      label: 'Summary'
+      selector: summary
+    - name: image_url
+      label: 'Episode image URL'
+      selector: image/original
+    - name: show_href
+      label: 'Show link (to extract show ID)'
+      selector: '_links/show/href'
+  ids:
+    id:
+      type: integer
+
+process:
+  title: name
+
+  field_tvmaze_episode_id: id
+
+  field_season: season
+
+  field_episode_number: number
+
+  field_airdate:
+    plugin: format_date
+    source: airdate
+    from_format: 'Y-m-d'
+    to_format: 'Y-m-d'
+    settings:
+      validate_format: false
+
+  field_runtime: runtime
+
+  field_episode_summary/value: summary
+  field_episode_summary/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_episode_image:
+    -
+      plugin: skip_on_empty
+      source: image_url
+      method: process
+    -
+      plugin: tvmaze_image_download
+      destination: 'public://tvmaze/episodes'
+
+  # Extract the show's TV Maze ID from the href, e.g. "https://api.tvmaze.com/shows/1"
+  _show_id_raw:
+    plugin: callback
+    callable: basename
+    source: show_href
+
+  field_tv_show:
+    plugin: migration_lookup
+    migration: tv_maze_shows
+    source: '@_show_id_raw'
+    no_stub: true
+
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: tv_episode
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: tv_episode
+
+migration_dependencies:
+  required:
+    - tv_maze_shows
+
+dependencies:
+  enforced:
+    module:
+      - tv_maze_migrate

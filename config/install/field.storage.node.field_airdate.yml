@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_airdate
+field_name: field_airdate
+entity_type: node
+type: datetime
+label: 'Air Date'
+description: ''
+settings:
+  datetime_type: date
+cardinality: 1
+translatable: false
+indexes: {}
+persist_with_no_fields: false
+custom_storage: false

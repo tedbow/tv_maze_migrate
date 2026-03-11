@@ -1,0 +1,153 @@
+id: tv_maze_shows
+label: 'TV Maze: Shows'
+migration_group: tv_maze
+migration_tags:
+  - tv_maze
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json_object
+  # Each URL returns a single JSON object for one show.
+  # Add more show IDs by appending additional URLs.
+  urls:
+    - 'https://api.tvmaze.com/shows/1'
+    - 'https://api.tvmaze.com/shows/2'
+    - 'https://api.tvmaze.com/shows/3'
+    - 'https://api.tvmaze.com/shows/4'
+    - 'https://api.tvmaze.com/shows/5'
+  # Empty item_selector means the root JSON object is the single item per URL.
+  item_selector: ''
+  fields:
+    - name: id
+      label: 'TV Maze Show ID'
+      selector: id
+    - name: name
+      label: 'Show name'
+      selector: name
+    - name: summary
+      label: 'Summary'
+      selector: summary
+    - name: premiered
+      label: 'Premiered date'
+      selector: premiered
+    - name: ended
+      label: 'Ended date'
+      selector: ended
+    - name: status
+      label: 'Status'
+      selector: status
+    - name: genres
+      label: 'Genres'
+      selector: genres
+    - name: rating_average
+      label: 'Rating average'
+      selector: rating/average
+    - name: network_name
+      label: 'Network name'
+      selector: network/name
+    - name: network_country
+      label: 'Network country code'
+      selector: network/country/code
+    - name: official_site
+      label: 'Official site URL'
+      selector: officialSite
+    - name: imdb_id
+      label: 'IMDB ID'
+      selector: externals/imdb
+    - name: image_url
+      label: 'Show image URL'
+      selector: image/original
+  ids:
+    id:
+      type: integer
+
+process:
+  title: name
+
+  field_tvmaze_id: id
+
+  field_summary/value: summary
+  field_summary/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_premiered:
+    plugin: format_date
+    source: premiered
+    from_format: 'Y-m-d'
+    to_format: 'Y-m-d'
+    settings:
+      validate_format: false
+
+  field_ended:
+    plugin: format_date
+    source: ended
+    from_format: 'Y-m-d'
+    to_format: 'Y-m-d'
+    settings:
+      validate_format: false
+
+  field_show_status: status
+
+  field_genres:
+    plugin: tvmaze_terms
+    source: genres
+    vocabulary: tv_genre
+
+  field_rating: rating_average
+
+  field_network:
+    -
+      plugin: skip_on_empty
+      source: network_name
+      method: process
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: tv_network
+      value_key: name
+      bundle: tv_network
+      value_key: name
+
+  # Store the network country after creating the network term.
+  # (Handled via a post-save or accepted as best-effort — the entity_generate
+  # plugin creates the term; country is set if the term is newly created.)
+
+  field_official_site/uri: official_site
+  field_official_site/title: name
+
+  field_imdb_id: imdb_id
+
+  field_show_image:
+    -
+      plugin: skip_on_empty
+      source: image_url
+      method: process
+    -
+      plugin: tvmaze_image_download
+      destination: 'public://tvmaze/shows'
+
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: tv_show
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: tv_show
+
+migration_dependencies:
+  required: []
+  optional: []
+
+dependencies:
+  enforced:
+    module:
+      - tv_maze_migrate

@@ -1,0 +1,103 @@
+id: tv_maze_cast
+label: 'TV Maze: Cast Members'
+migration_group: tv_maze
+migration_tags:
+  - tv_maze
+
+source:
+  # Custom source plugin that extends migrate_plus url source and injects
+  # show_tvmaze_id extracted from the URL pattern /shows/{id}/cast.
+  plugin: tv_maze_cast_url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  # Keep this list in sync with tv_maze_shows urls.
+  urls:
+    - 'https://api.tvmaze.com/shows/1/cast'
+    - 'https://api.tvmaze.com/shows/2/cast'
+    - 'https://api.tvmaze.com/shows/3/cast'
+    - 'https://api.tvmaze.com/shows/4/cast'
+    - 'https://api.tvmaze.com/shows/5/cast'
+  item_selector: ''
+  fields:
+    - name: show_tvmaze_id
+      label: 'TV Maze Show ID (injected from URL)'
+      selector: show_tvmaze_id
+    - name: person_id
+      label: 'Person ID'
+      selector: person/id
+    - name: person_name
+      label: 'Person name'
+      selector: person/name
+    - name: character_name
+      label: 'Character name'
+      selector: character/name
+    - name: birthday
+      label: 'Birthday'
+      selector: person/birthday
+    - name: gender
+      label: 'Gender'
+      selector: person/gender
+    - name: person_image_url
+      label: 'Person image URL'
+      selector: person/image/original
+  # Composite ID: show_tvmaze_id + person_id (a person can appear in multiple shows)
+  ids:
+    show_tvmaze_id:
+      type: integer
+    person_id:
+      type: integer
+
+process:
+  title: person_name
+
+  field_tvmaze_person_id: person_id
+
+  field_character_name: character_name
+
+  field_birthday:
+    plugin: format_date
+    source: birthday
+    from_format: 'Y-m-d'
+    to_format: 'Y-m-d'
+    settings:
+      validate_format: false
+
+  field_gender: gender
+
+  field_person_image:
+    -
+      plugin: skip_on_empty
+      source: person_image_url
+      method: process
+    -
+      plugin: tvmaze_image_download
+      destination: 'public://tvmaze/people'
+
+  field_tv_show:
+    plugin: migration_lookup
+    migration: tv_maze_shows
+    source: show_tvmaze_id
+    no_stub: true
+
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: tv_cast_member
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: tv_cast_member
+
+migration_dependencies:
+  required:
+    - tv_maze_shows
+
+dependencies:
+  enforced:
+    module:
+      - tv_maze_migrate

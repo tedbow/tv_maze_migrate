@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: field_network_country
+field_name: field_network_country
+entity_type: taxonomy_term
+type: string
+label: 'Country Code'
+description: 'ISO 3166-1 country code for this network (e.g. US, GB).'
+settings:
+  max_length: 10
+  is_ascii: true
+  case_sensitive: false
+cardinality: 1
+translatable: true
+indexes: {}
+persist_with_no_fields: false
+custom_storage: false

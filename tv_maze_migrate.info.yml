@@ -1,0 +1,14 @@
+name: 'TV Maze Migrate'
+type: module
+description: 'Imports TV shows, episodes, and cast members from the TV Maze REST API using Drupal Migrate.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:migrate
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:datetime
+  - drupal:link
+  - drupal:image

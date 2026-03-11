@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_character_name
+    - node.type.tv_cast_member
+entity_type: node
+field_name: field_character_name
+bundle: tv_cast_member
+label: 'Character Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_character_name
+field_name: field_character_name
+entity_type: node
+type: string
+label: 'Character Name'
+description: ''
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+cardinality: 1
+translatable: false
+indexes: {}
+persist_with_no_fields: false
+custom_storage: false

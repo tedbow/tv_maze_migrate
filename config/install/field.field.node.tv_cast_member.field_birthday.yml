@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birthday
+    - node.type.tv_cast_member
+entity_type: node
+field_name: field_birthday
+bundle: tv_cast_member
+label: 'Birthday'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
