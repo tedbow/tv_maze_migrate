@@ -108,8 +108,6 @@ process:
       bundle_key: vid
       bundle: tv_network
       value_key: name
-      bundle: tv_network
-      value_key: name
 
   # Store the network country after creating the network term.
   # (Handled via a post-save or accepted as best-effort — the entity_generate
