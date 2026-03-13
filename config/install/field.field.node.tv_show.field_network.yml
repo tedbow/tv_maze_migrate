@@ -10,7 +10,7 @@ field_name: field_network
 bundle: tv_show
 label: 'Network'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
