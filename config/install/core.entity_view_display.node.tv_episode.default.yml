@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.tv_episode.field_tvmaze_episode_id
     - node.type.tv_episode
   module:
-    - svg_image
     - user
 id: node.tv_episode.default
 targetEntityType: node
@@ -31,7 +30,7 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_tv_show:
     type: entity_reference_label
@@ -39,7 +38,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_season:
     type: number_integer
@@ -48,7 +47,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_episode_number:
     type: number_integer
@@ -57,7 +56,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_runtime:
     type: number_integer
@@ -66,7 +65,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_airdate:
     type: datetime_default
@@ -75,14 +74,14 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_episode_summary:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_tvmaze_episode_id:
     type: number_integer
@@ -91,7 +90,6 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
 hidden: {  }
-
