@@ -12,3 +12,4 @@ dependencies:
   - drupal:datetime
   - drupal:link
   - drupal:image
+  - drupal:views
