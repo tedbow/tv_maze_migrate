@@ -69,8 +69,7 @@ process:
 
   field_summary/value: summary
   field_summary/format:
-    plugin: default_value
-    default_value: content_format
+    plugin: tvmaze_text_format
 
   field_premiered:
     plugin: format_date

@@ -9,7 +9,7 @@ field_name: field_episode_image
 bundle: tv_episode
 label: 'Episode Image'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

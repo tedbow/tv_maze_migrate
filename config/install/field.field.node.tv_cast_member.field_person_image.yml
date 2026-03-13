@@ -9,7 +9,7 @@ field_name: field_person_image
 bundle: tv_cast_member
 label: 'Person Image'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

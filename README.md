@@ -99,23 +99,23 @@ drush migrate:status --group=tv_maze
 Re-import with updates (for already-imported items):
 
 ```bash
-drush migrate:import tv_maze_shows --update
-drush migrate:import tv_maze_episodes --update
-drush migrate:import tv_maze_cast --update
+vendor/bin/ddrush migrate:import tv_maze_shows --update
+vendor/bin/drush migrate:import tv_maze_episodes --update
+vendor/bin/drush migrate:import tv_maze_cast --update
 ```
 
 Roll back all imported content:
 
 ```bash
-drush migrate:rollback tv_maze_cast
-drush migrate:rollback tv_maze_episodes
-drush migrate:rollback tv_maze_shows
+vendor/bin/drush migrate:rollback tv_maze_cast
+vendor/bin/drush migrate:rollback tv_maze_episodes
+vendor/bin/drush migrate:rollback tv_maze_shows
 ```
 
 Or roll back the entire group at once:
 
 ```bash
-drush migrate:rollback --group=tv_maze
+vendor/bin/drush migrate:rollback --group=tv_maze
 ```
 
 ## Configuring Which Shows to Import

@@ -70,8 +70,7 @@ process:
 
   field_episode_summary/value: summary
   field_episode_summary/format:
-    plugin: default_value
-    default_value: content_format
+    plugin: tvmaze_text_format
 
   field_episode_image:
     -
