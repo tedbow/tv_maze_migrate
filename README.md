@@ -85,9 +85,9 @@ vocabularies.
 Migrations must be run in this order because episodes and cast depend on shows:
 
 ```bash
-drush migrate:import tv_maze_shows
-drush migrate:import tv_maze_episodes
-drush migrate:import tv_maze_cast
+vendor/bin/drush migrate:import tv_maze_shows
+vendor/bin/drush migrate:import tv_maze_episodes
+vendor/bin/drush migrate:import tv_maze_cast
 ```
 
 Check status at any time:
@@ -123,13 +123,13 @@ drush migrate:rollback --group=tv_maze
 The shows to import are defined by TV Maze show IDs in the `urls` arrays of the
 three migration config files. By default shows 1–5 are included:
 
-| ID | Show |
-|---|---|
-| 1 | Under the Dome |
-| 2 | Person of Interest |
-| 3 | Bitten |
-| 4 | Arrow |
-| 5 | True Blood |
+| ID | Show          |
+|--|---------------|
+| 23470 | Succession    |
+| 157 | The Americans |
+| 1871 | Mr Robot      |
+| 75632 | The Pitt      |
+| 60213 | The Diplomat  |
 
 To find a show's ID, search at `https://api.tvmaze.com/search/shows?q=<name>`.
 
@@ -140,8 +140,8 @@ with Drush:
 
 ```bash
 # Example: add show ID 82 (Game of Thrones)
-drush php:eval "
-\$ids = [1, 2, 3, 4, 5, 82];
+vendor/bin/drush php:eval "
+\$ids = [23470, 157, 1871, 75632, 60213];
 foreach (['tv_maze_shows', 'tv_maze_episodes', 'tv_maze_cast'] as \$migration) {
   \$suffix = (strpos(\$migration, 'shows') !== FALSE) ? '' : (strpos(\$migration, 'episodes') !== FALSE ? '/episodes' : '/cast');
   \$urls = array_map(fn(\$id) => \"https://api.tvmaze.com/shows/{\$id}{\$suffix}\", \$ids);
@@ -151,7 +151,7 @@ foreach (['tv_maze_shows', 'tv_maze_episodes', 'tv_maze_cast'] as \$migration) {
 }
 echo 'Done';
 "
-drush cr
+vendor/bin/drushdrush cr
 ```
 
 Then re-run the migrations with `--update` to import the new shows while

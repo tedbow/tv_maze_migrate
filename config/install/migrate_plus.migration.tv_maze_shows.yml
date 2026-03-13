@@ -70,7 +70,7 @@ process:
   field_summary/value: summary
   field_summary/format:
     plugin: default_value
-    default_value: basic_html
+    default_value: content_format
 
   field_premiered:
     plugin: format_date

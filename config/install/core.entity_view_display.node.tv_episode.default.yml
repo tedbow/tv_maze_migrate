@@ -1,0 +1,97 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.tv_episode.field_airdate
+    - field.field.node.tv_episode.field_episode_image
+    - field.field.node.tv_episode.field_episode_number
+    - field.field.node.tv_episode.field_episode_summary
+    - field.field.node.tv_episode.field_runtime
+    - field.field.node.tv_episode.field_season
+    - field.field.node.tv_episode.field_tv_show
+    - field.field.node.tv_episode.field_tvmaze_episode_id
+    - node.type.tv_episode
+  module:
+    - svg_image
+    - user
+id: node.tv_episode.default
+targetEntityType: node
+bundle: tv_episode
+mode: default
+content:
+  field_episode_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tv_show:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_season:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_episode_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_runtime:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_airdate:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_episode_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_tvmaze_episode_id:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+hidden: {  }
+
