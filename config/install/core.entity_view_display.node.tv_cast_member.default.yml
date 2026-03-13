@@ -1,3 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.tv_cast_member.field_birthday
+    - field.field.node.tv_cast_member.field_character_name
+    - field.field.node.tv_cast_member.field_gender
+    - field.field.node.tv_cast_member.field_person_image
+    - field.field.node.tv_cast_member.field_tv_show
+    - field.field.node.tv_cast_member.field_tvmaze_person_id
+    - node.type.tv_cast_member
+  module:
+    - image
+id: node.tv_cast_member.default
+targetEntityType: node
+bundle: tv_cast_member
+mode: default
 content:
   field_person_image:
     type: image

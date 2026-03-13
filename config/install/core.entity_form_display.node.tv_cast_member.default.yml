@@ -1,4 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.tv_cast_member.field_birthday
+    - field.field.node.tv_cast_member.field_character_name
+    - field.field.node.tv_cast_member.field_gender
+    - field.field.node.tv_cast_member.field_person_image
+    - field.field.node.tv_cast_member.field_tv_show
+    - field.field.node.tv_cast_member.field_tvmaze_person_id
+    - node.type.tv_cast_member
+  module:
+    - image
+id: node.tv_cast_member.default
+targetEntityType: node
+bundle: tv_cast_member
+mode: default
 content:
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: -4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: -3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: -1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_person_image:
     type: image_image
     weight: 1

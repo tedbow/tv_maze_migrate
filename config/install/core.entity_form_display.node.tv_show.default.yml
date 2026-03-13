@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.tv_show.field_tvmaze_id
     - node.type.tv_show
   module:
-    - path
     - text
 id: node.tv_show.default
 targetEntityType: node
@@ -43,12 +42,6 @@ content:
   created:
     type: datetime_timestamp
     weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

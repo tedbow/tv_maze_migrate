@@ -1,3 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.tv_show.field_ended
+    - field.field.node.tv_show.field_genres
+    - field.field.node.tv_show.field_imdb_id
+    - field.field.node.tv_show.field_network
+    - field.field.node.tv_show.field_official_site
+    - field.field.node.tv_show.field_premiered
+    - field.field.node.tv_show.field_rating
+    - field.field.node.tv_show.field_show_image
+    - field.field.node.tv_show.field_show_status
+    - field.field.node.tv_show.field_summary
+    - field.field.node.tv_show.field_tvmaze_id
+    - node.type.tv_show
+  module:
+    - image
+    - link
+    - text
+id: node.tv_show.default
+targetEntityType: node
+bundle: tv_show
+mode: default
 content:
   field_show_image:
     type: image
