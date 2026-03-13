@@ -11,11 +11,11 @@ source:
   # Each URL returns a JSON array of episodes for one show.
   # Keep this list in sync with tv_maze_shows urls.
   urls:
-    - 'https://api.tvmaze.com/shows/1/episodes'
-    - 'https://api.tvmaze.com/shows/2/episodes'
-    - 'https://api.tvmaze.com/shows/3/episodes'
-    - 'https://api.tvmaze.com/shows/4/episodes'
-    - 'https://api.tvmaze.com/shows/5/episodes'
+    - 'https://api.tvmaze.com/shows/23470/episodes'
+    - 'https://api.tvmaze.com/shows/157/episodes'
+    - 'https://api.tvmaze.com/shows/1871/episodes'
+    - 'https://api.tvmaze.com/shows/75632/episodes'
+    - 'https://api.tvmaze.com/shows/60213/episodes'
   item_selector: ''
   fields:
     - name: id

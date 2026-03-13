@@ -12,11 +12,11 @@ source:
   data_parser_plugin: json
   # Keep this list in sync with tv_maze_shows urls.
   urls:
-    - 'https://api.tvmaze.com/shows/1/cast'
-    - 'https://api.tvmaze.com/shows/2/cast'
-    - 'https://api.tvmaze.com/shows/3/cast'
-    - 'https://api.tvmaze.com/shows/4/cast'
-    - 'https://api.tvmaze.com/shows/5/cast'
+    - 'https://api.tvmaze.com/shows/23470/cast'
+    - 'https://api.tvmaze.com/shows/157/cast'
+    - 'https://api.tvmaze.com/shows/1871/cast'
+    - 'https://api.tvmaze.com/shows/75632/cast'
+    - 'https://api.tvmaze.com/shows/60213/cast'
   item_selector: ''
   fields:
     - name: show_tvmaze_id

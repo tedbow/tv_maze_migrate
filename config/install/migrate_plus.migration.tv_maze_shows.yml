@@ -11,11 +11,11 @@ source:
   # Each URL returns a single JSON object for one show.
   # Add more show IDs by appending additional URLs.
   urls:
-    - 'https://api.tvmaze.com/shows/1'
-    - 'https://api.tvmaze.com/shows/2'
-    - 'https://api.tvmaze.com/shows/3'
-    - 'https://api.tvmaze.com/shows/4'
-    - 'https://api.tvmaze.com/shows/5'
+    - 'https://api.tvmaze.com/shows/23470'
+    - 'https://api.tvmaze.com/shows/157'
+    - 'https://api.tvmaze.com/shows/1871'
+    - 'https://api.tvmaze.com/shows/75632'
+    - 'https://api.tvmaze.com/shows/60213'
   # Empty item_selector means the root JSON object is the single item per URL.
   item_selector: ''
   fields:
