@@ -10,7 +10,7 @@ field_name: field_tv_show
 bundle: tv_cast_member
 label: 'TV Show'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
