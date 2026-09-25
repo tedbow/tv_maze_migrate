@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tedbow_demo
+active_version: 309b9aa93e4e87e8
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        footer_top:
+          title: 'Footer top'
+        footer_bottom:
+          title: 'Footer bottom'
+label: 'Site Footer'
+id: sdc.tedbow_demo.site-footer
+provider: tedbow_demo
+source: sdc
+source_local_id: 'tedbow_demo:site-footer'

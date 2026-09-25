@@ -1,0 +1,133 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.views_block.episodes_for_show-block_1
+    - canvas.component.block.views_block.show_cast_members-block_1
+    - canvas.component.sdc.tedbow_demo.dd-button
+    - canvas.component.sdc.tedbow_demo.dd-date
+    - canvas.component.sdc.tedbow_demo.dd-image
+    - canvas.component.sdc.tedbow_demo.dd-label-slot-value
+    - canvas.component.sdc.tedbow_demo.dd-label-value
+    - canvas.component.sdc.tedbow_demo.dd-text
+    - canvas.component.sdc.tedbow_demo.heading
+    - canvas.component.sdc.tedbow_demo.two_column
+    - core.entity_view_mode.node.full
+    - field.field.node.tv_show.field_network
+    - field.field.node.tv_show.field_official_site
+    - field.field.node.tv_show.field_premiered
+    - field.field.node.tv_show.field_show_image
+    - field.field.node.tv_show.field_summary
+    - image.style.canvas_parametrized_width
+    - node.type.tv_show
+    - taxonomy.vocabulary.tv_network
+  module:
+    - file
+    - node
+    - options
+    - taxonomy
+id: node.tv_show.full
+content_entity_type_id: node
+content_entity_type_bundle: tv_show
+content_entity_type_view_mode: full
+component_tree:
+  '0:c70189b2-d91c-435f-879d-554ba1442c6f':
+    uuid: c70189b2-d91c-435f-879d-554ba1442c6f
+    component_id: sdc.tedbow_demo.dd-image
+    component_version: 8584b8e5d525ea24
+    inputs:
+      image:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_show_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      ratio: auto
+  '1:5d9facba-9d61-4c78-b25d-3e5901b174ce':
+    uuid: 5d9facba-9d61-4c78-b25d-3e5901b174ce
+    component_id: sdc.tedbow_demo.two_column
+    component_version: f90c1f6cfb2fc04a
+    inputs:
+      width: 33
+  '1:column_one:0:c6440dcc-9bbc-4f04-a762-70762bab915a':
+    parent_uuid: 5d9facba-9d61-4c78-b25d-3e5901b174ce
+    slot: column_one
+    uuid: c6440dcc-9bbc-4f04-a762-70762bab915a
+    component_id: sdc.tedbow_demo.dd-label-value
+    component_version: 0a1f1e0b8500e101
+    inputs:
+      label: Network
+      value:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_network␞␟entity␜␜entity:taxonomy_term␝name␞␟value'
+      link:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_network␞␟url'
+  '1:column_one:1:00403eb7-3765-4f07-bd61-74fc136e42a4':
+    parent_uuid: 5d9facba-9d61-4c78-b25d-3e5901b174ce
+    slot: column_one
+    uuid: 00403eb7-3765-4f07-bd61-74fc136e42a4
+    component_id: sdc.tedbow_demo.dd-label-slot-value
+    component_version: 794511a24b0deb43
+    inputs:
+      label: Premeire
+  '1:column_one:1:value:0:d335eebf-7568-4107-85b5-2697cc93ab21':
+    parent_uuid: 00403eb7-3765-4f07-bd61-74fc136e42a4
+    slot: value
+    uuid: d335eebf-7568-4107-85b5-2697cc93ab21
+    component_id: sdc.tedbow_demo.dd-date
+    component_version: 5c91788ed564ca74
+    inputs:
+      date:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_premiered␞␟value'
+  '1:column_one:2:82b8322f-b084-4851-b142-b52e82e5c2a7':
+    parent_uuid: 5d9facba-9d61-4c78-b25d-3e5901b174ce
+    slot: column_one
+    uuid: 82b8322f-b084-4851-b142-b52e82e5c2a7
+    component_id: sdc.tedbow_demo.dd-button
+    component_version: a20da296a37388a8
+    inputs:
+      variant: primary
+      label: 'Official Site'
+      href:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_official_site␞␟url'
+      size: medium
+      disabled: false
+  '1:column_two:0:84352c47-9532-454b-91e5-a1347c35ddb7':
+    parent_uuid: 5d9facba-9d61-4c78-b25d-3e5901b174ce
+    slot: column_two
+    uuid: 84352c47-9532-454b-91e5-a1347c35ddb7
+    component_id: sdc.tedbow_demo.dd-text
+    component_version: 9064d162a1b2592f
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_summary␞␟processed'
+      text_size: normal
+  '2:2c9984ec-0072-4be7-b95a-bc6c8a8d062e':
+    uuid: 2c9984ec-0072-4be7-b95a-bc6c8a8d062e
+    component_id: sdc.tedbow_demo.heading
+    component_version: 8c01a2bdb897a810
+    inputs:
+      text: 'Latest Episodes'
+      style: primary
+      element: h1
+  '3:9795210b-b976-4d32-b98f-02e99b33fe77':
+    uuid: 9795210b-b976-4d32-b98f-02e99b33fe77
+    component_id: block.views_block.episodes_for_show-block_1
+    component_version: f867c6f1977d70d1
+    inputs:
+      label: 'Episodes for show'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
+  '4:876baeef-0657-4c57-b8d3-26ee1e8350dd':
+    uuid: 876baeef-0657-4c57-b8d3-26ee1e8350dd
+    component_id: block.views_block.show_cast_members-block_1
+    component_version: 3f2100db4605216a
+    inputs:
+      label: 'Show Cast Members'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
+exposed_slots: {  }
+page_variant: null

@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tedbow_demo
+active_version: 794511a24b0deb43
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Genre
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions:
+        value:
+          title: Value
+          description: 'The value content to display after the label'
+          examples:
+            - Drama
+label: 'Label Slot Value'
+id: sdc.tedbow_demo.dd-label-slot-value
+provider: tedbow_demo
+source: sdc
+source_local_id: 'tedbow_demo:dd-label-slot-value'

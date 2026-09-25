@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tedbow_demo.cast-member
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tv_cast_member.field_character_name
+    - field.field.node.tv_cast_member.field_person_image
+    - image.style.canvas_parametrized_width
+    - node.type.tv_cast_member
+  module:
+    - file
+    - node
+id: node.tv_cast_member.teaser
+content_entity_type_id: node
+content_entity_type_bundle: tv_cast_member
+content_entity_type_view_mode: teaser
+component_tree:
+  '0:cde2ecea-0d8c-4a61-823d-bfb1d578387a':
+    uuid: cde2ecea-0d8c-4a61-823d-bfb1d578387a
+    component_id: sdc.tedbow_demo.cast-member
+    component_version: 36811d910097c0c1
+    inputs:
+      image:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_cast_member␝field_person_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      actor_name:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_cast_member␝title␞␟value'
+      character_name:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_cast_member␝field_character_name␞␟value'
+      link:
+        sourceType: host-entity-url
+        absolute: false
+exposed_slots: {  }
+page_variant: null

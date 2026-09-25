@@ -2,15 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_network
-    - node.type.tv_show
+    - core.entity_view_mode.node.teaser
+    - node.type.tv_cast_member
+    - node.type.tv_episode
   module:
     - node
     - user
-id: other_network_shows
-label: 'Other Shows on This Network'
+id: related_tv_show
+label: 'Related TV Show'
 module: views
-description: 'Displays other TV shows on the same network, excluding the current show'
+description: 'Displays the TV show for an episode or cast member'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -21,13 +22,13 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'More from this Network'
+      title: 'TV Show'
       fields:
         title:
           id: title
           table: node_field_data
           field: title
-          relationship: reverse__node__field_network
+          relationship: field_tv_show
           group_type: group
           admin_label: ''
           entity_type: node
@@ -74,7 +75,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 1
       exposed_form:
         type: basic
         options:
@@ -93,20 +94,7 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts:
-        field_rating_value:
-          id: field_rating_value
-          table: node__field_rating
-          field: field_rating_value
-          relationship: reverse__node__field_network
-          group_type: group
-          admin_label: ''
-          plugin_id: standard
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
+      sorts: {  }
       arguments:
         nid:
           id: nid
@@ -142,7 +130,8 @@ display:
             fail: 'not found'
           validate_options:
             bundles:
-              tv_show: tv_show
+              tv_episode: tv_episode
+              tv_cast_member: tv_cast_member
             access: true
             operation: view
             multiple: 0
@@ -153,7 +142,7 @@ display:
           id: status
           table: node_field_data
           field: status
-          relationship: reverse__node__field_network
+          relationship: field_tv_show
           entity_type: node
           entity_field: status
           plugin_id: boolean
@@ -161,35 +150,6 @@ display:
           group: 1
           expose:
             operator: ''
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          relationship: reverse__node__field_network
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          value:
-            tv_show: tv_show
-          group: 1
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: reverse__node__field_network
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: numeric
-          operator: '!='
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 1
-          exposed: false
-          is_grouped: false
       style:
         type: default
         options:
@@ -199,34 +159,25 @@ display:
       row:
         type: 'entity:node'
         options:
-          relationship: reverse__node__field_network
+          relationship: field_tv_show
           view_mode: teaser
       query:
         type: views_query
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: true
+          distinct: false
           replica: false
           query_tags: {  }
       relationships:
-        field_network:
-          id: field_network
-          table: node__field_network
-          field: field_network
+        field_tv_show:
+          id: field_tv_show
+          table: node__field_tv_show
+          field: field_tv_show
           relationship: none
           group_type: group
-          admin_label: Network
+          admin_label: 'TV Show'
           plugin_id: standard
-          required: true
-        reverse__node__field_network:
-          id: reverse__node__field_network
-          table: taxonomy_term_field_data
-          field: reverse__node__field_network
-          relationship: field_network
-          group_type: group
-          admin_label: 'Other Shows'
-          plugin_id: entity_reverse
           required: true
       header: {  }
       footer: {  }
@@ -248,7 +199,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_description: 'Other Shows on This Network'
+      block_description: 'Related TV Show'
     cache_metadata:
       max-age: -1
       contexts:

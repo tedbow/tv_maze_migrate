@@ -3,6 +3,11 @@
 A custom Drupal module that imports TV shows, episodes, and cast members from
 the [TV Maze REST API](https://www.tvmaze.com/api) using Drupal Migrate.
 
+The module only provides what the migrations need: content types, fields,
+vocabularies and migrations. Views, Canvas templates and pages are built on
+camera in the Drupal Canvas site-building demo. The finished demo lives in the
+[`tv_beevy_demo` recipe](#finished-demo-recipe).
+
 ## Requirements
 
 - Drupal 10 or 11
@@ -117,6 +122,45 @@ Or roll back the entire group at once:
 ```bash
 vendor/bin/drush migrate:rollback --group=tv_maze
 ```
+
+## Finished Demo Recipe
+
+`recipes/tv_beevy_demo` recreates the finished TV Beevy Canvas demo site:
+
+- Views: `shows`, `single_show`, `episodes_for_show`, `show_cast_members`,
+  `newest_episode_list`, `other_network_shows`, `related_tv_show`, `show_cast`,
+  `show_episodes`.
+- `show_cast` and `show_season` view modes and TV Show view displays.
+- Canvas content templates, the "Hero image left" pattern, and the `tv_beevy`
+  page template (page variant) as the site default.
+- Canvas pages: TV Beevy (front page), Shows, Latest Episodes, Beehive Reviews,
+  Community Buzz; the main menu links.
+- `recipes/tv_beevy_demo_media` (applied first): the images used by the pages,
+  pattern and page template.
+
+Requirements: [Drupal Canvas](https://www.drupal.org/project/canvas),
+[Views Block Override](https://www.drupal.org/project/views_block_override),
+[Entity Block](https://www.drupal.org/project/entity_block), and the
+[`tedbow_demo` theme](https://github.com/tedbow/tedbow_demo_theme) in
+`themes/custom/tedbow_demo`.
+
+Apply it to a fresh site installed with the Standard profile, then import the
+TV Maze content:
+
+```bash
+vendor/bin/drush recipe modules/custom/tv_maze_migrate/recipes/tv_beevy_demo
+vendor/bin/drush migrate:import --group=tv_maze
+```
+
+Only apply it to a fresh site:
+
+- The pattern and page template reference media by ID. On a fresh site the
+  media recipe creates the 3 media items with IDs 1–3 in a fixed order, which
+  the config expects.
+- Config that already exists is skipped, so views or templates you built by
+  hand with the same names are not replaced.
+
+To record the demo instead, only install the module and run the migrations.
 
 ## Configuring Which Shows to Import
 

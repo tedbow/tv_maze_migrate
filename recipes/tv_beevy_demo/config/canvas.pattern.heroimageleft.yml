@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tedbow_demo.dd-button
+    - canvas.component.sdc.tedbow_demo.dd-hero
+    - canvas.component.sdc.tedbow_demo.dd-text
+    - canvas.component.sdc.tedbow_demo.heading
+    - field.field.media.image.field_media_image
+    - filter.format.canvas_html_block
+    - image.style.canvas_parametrized_width
+    - media.type.image
+  content:
+    - 'file:file:d52cb770-a3ba-4b80-8dcb-c893f1c1aa55'
+    - 'media:image:66ca8917-deba-4b3a-96d3-6b1f5b1663d6'
+  module:
+    - file
+    - link
+    - media
+    - options
+    - text
+id: heroimageleft
+label: 'Hero image left'
+component_tree:
+  '0:1c758271-452e-44e6-8e75-95b8b4a5e374':
+    uuid: 1c758271-452e-44e6-8e75-95b8b4a5e374
+    component_id: sdc.tedbow_demo.dd-hero
+    component_version: e316557cc7ddcb7c
+    inputs:
+      image:
+        target_id: '2'
+      image_position: first
+      ratio: auto
+      link:
+        uri: 'https://example.com'
+        options: {  }
+      content_position: center
+      content_width: full
+  '0:body:0:45b10b13-a8be-4c03-822e-dcf7b807a6dd':
+    parent_uuid: 1c758271-452e-44e6-8e75-95b8b4a5e374
+    slot: body
+    uuid: 45b10b13-a8be-4c03-822e-dcf7b807a6dd
+    component_id: sdc.tedbow_demo.heading
+    component_version: 8c01a2bdb897a810
+    inputs:
+      text: 'The Hive Mind🧠'
+      style: primary
+      element: h3
+  '0:body:1:08e4235e-989d-4626-b59f-771fe0383dd0':
+    parent_uuid: 1c758271-452e-44e6-8e75-95b8b4a5e374
+    slot: body
+    uuid: 08e4235e-989d-4626-b59f-771fe0383dd0
+    component_id: sdc.tedbow_demo.dd-text
+    component_version: 9064d162a1b2592f
+    inputs:
+      text:
+        value: '<p>Ever wonder what everyone else is watching? Tap into the <strong>Hive Mind</strong>—our real-time community pulse that tracks trending hits, underground favorites, and the shows that have the whole swarm talking. It’s not just an algorithm; it’s the collective wisdom of thousands of TV fanatics!</p>'
+        format: canvas_html_block
+      text_size: normal
+  '0:body:2:b3248b7d-df64-4188-98d6-498914ceac94':
+    parent_uuid: 1c758271-452e-44e6-8e75-95b8b4a5e374
+    slot: body
+    uuid: b3248b7d-df64-4188-98d6-498914ceac94
+    component_id: sdc.tedbow_demo.dd-button
+    component_version: a20da296a37388a8
+    inputs:
+      variant: primary
+      label: 'Learn more about the Hive!'
+      size: medium
+      disabled: false

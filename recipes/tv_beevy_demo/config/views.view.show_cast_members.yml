@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tv_show
-    - node.type.tv_show
+    - core.entity_view_mode.node.teaser
+    - node.type.tv_cast_member
   module:
     - node
     - user
-id: related_tv_show
-label: 'Related TV Show'
+id: show_cast_members
+label: 'Show Cast Members'
 module: views
-description: 'Displays the TV show for an episode or cast member'
+description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -21,13 +21,13 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'TV Show'
+      title: 'Show Cast Members'
       fields:
         title:
           id: title
           table: node_field_data
           field: title
-          relationship: field_tv_show
+          relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
@@ -48,7 +48,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -74,7 +74,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 1
+          items_per_page: 6
       exposed_form:
         type: basic
         options:
@@ -93,18 +93,31 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
-      arguments:
-        nid:
-          id: nid
+      sorts:
+        title:
+          id: title
           table: node_field_data
-          field: nid
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: nid
-          plugin_id: node_nid
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      arguments:
+        field_tv_show_target_id:
+          id: field_tv_show_target_id
+          table: node__field_tv_show
+          field: field_tv_show_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: entity_target_id
           default_action: default
           exception:
             value: all
@@ -123,17 +136,11 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: true
+          specify_validation: false
           validate:
-            type: 'entity:node'
+            type: none
             fail: 'not found'
-          validate_options:
-            bundles:
-              tv_episode: tv_episode
-              tv_cast_member: tv_cast_member
-            access: true
-            operation: view
-            multiple: 0
+          validate_options: {  }
           break_phrase: false
           not: false
       filters:
@@ -141,7 +148,6 @@ display:
           id: status
           table: node_field_data
           field: status
-          relationship: field_tv_show
           entity_type: node
           entity_field: status
           plugin_id: boolean
@@ -149,16 +155,26 @@ display:
           group: 1
           expose:
             operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            tv_cast_member: tv_cast_member
       style:
-        type: default
+        type: grid_responsive
         options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
+          uses_fields: false
+          columns: 3
+          cell_min_width: 300
+          grid_gutter: 24
+          alignment: horizontal
       row:
         type: 'entity:node'
         options:
-          relationship: field_tv_show
           view_mode: teaser
       query:
         type: views_query
@@ -168,16 +184,9 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships:
-        field_tv_show:
-          id: field_tv_show
-          table: node__field_tv_show
-          field: field_tv_show
-          relationship: none
-          group_type: group
-          admin_label: 'TV Show'
-          plugin_id: standard
-          required: true
+      relationships: {  }
+      link_display: custom_url
+      link_url: 'show/{{ raw_arguments.field_tv_show_target_id }}/cast'
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -187,7 +196,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -197,15 +205,44 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      defaults:
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+      use_more: true
+      use_more_always: true
+      use_more_text: 'See full cast'
       display_extenders: {  }
-      block_description: 'Related TV Show'
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: 'Cast LIsting'
+    display_plugin: block
+    position: 2
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 30
+      defaults:
+        pager: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

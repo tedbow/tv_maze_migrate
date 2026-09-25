@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: e2d1c23d-7230-413e-b861-8e3816d4861b
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    cda19ce3-e898-41be-9ef1-b6274a665b0d: canvas_page
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Latest Episodes'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      title: ''
+      options: {  }
+      target_uuid: cda19ce3-e898-41be-9ef1-b6274a665b0d
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -48
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

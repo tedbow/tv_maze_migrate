@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.newest_episode_list
+  module:
+    - views
+active_version: b250ee9ec96f8560
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:newest_episode_list-block_2'
+        label: 'Latest episodes (teasers)'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Latest episodes (teasers)'
+id: block.views_block.newest_episode_list-block_2
+provider: views
+source: block
+source_local_id: 'views_block:newest_episode_list-block_2'

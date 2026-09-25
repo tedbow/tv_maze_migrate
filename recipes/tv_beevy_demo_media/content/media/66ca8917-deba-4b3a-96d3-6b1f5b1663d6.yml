@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 66ca8917-deba-4b3a-96d3-6b1f5b1663d6
+  bundle: image
+  default_langcode: en
+  depends:
+    d52cb770-a3ba-4b80-8dcb-c893f1c1aa55: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: hive_mind.png
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Hive mind'
+      title: ''
+      width: 1408
+      height: 768
+      entity: d52cb770-a3ba-4b80-8dcb-c893f1c1aa55

@@ -1,0 +1,68 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.views_block.episodes_for_show-block_1
+    - canvas.component.block.views_block.show_cast_members-block_1
+    - canvas.component.block.views_block.show_cast_members-block_2
+    - canvas.component.sdc.tedbow_demo.dd-image
+    - canvas.component.sdc.tedbow_demo.heading
+    - core.entity_view_mode.node.show_cast
+    - field.field.node.tv_show.field_show_image
+    - image.style.canvas_parametrized_width
+    - node.type.tv_show
+  module:
+    - file
+    - node
+    - options
+id: node.tv_show.show_cast
+content_entity_type_id: node
+content_entity_type_bundle: tv_show
+content_entity_type_view_mode: show_cast
+component_tree:
+  '0:3edc85b3-179f-40f2-abb8-775edc310569':
+    uuid: 3edc85b3-179f-40f2-abb8-775edc310569
+    component_id: sdc.tedbow_demo.dd-image
+    component_version: 8584b8e5d525ea24
+    inputs:
+      image:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_show_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      ratio: auto
+  '1:de5ad64e-2976-4f25-9e3a-c164cbb13c40':
+    uuid: de5ad64e-2976-4f25-9e3a-c164cbb13c40
+    component_id: block.views_block.episodes_for_show-block_1
+    component_version: f867c6f1977d70d1
+    inputs:
+      label: 'Episodes for show'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
+  '2:1f3708ba-a655-41ad-9660-9d74b952bb58':
+    uuid: 1f3708ba-a655-41ad-9660-9d74b952bb58
+    component_id: block.views_block.show_cast_members-block_1
+    component_version: 3f2100db4605216a
+    inputs:
+      label: 'Show Cast Members'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
+  '3:2af677a1-e681-422a-889e-ccf173c614f5':
+    uuid: 2af677a1-e681-422a-889e-ccf173c614f5
+    component_id: sdc.tedbow_demo.heading
+    component_version: 8c01a2bdb897a810
+    inputs:
+      text: 'A heading element'
+      style: primary
+      element: h1
+  '4:c64aa91d-07d9-45d6-a620-3f3a81eb66b5':
+    uuid: c64aa91d-07d9-45d6-a620-3f3a81eb66b5
+    component_id: block.views_block.show_cast_members-block_2
+    component_version: 4f57d2cb74836736
+    inputs:
+      label: 'Show Cast Members: Cast LIsting'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
+exposed_slots: {  }
+page_variant: null

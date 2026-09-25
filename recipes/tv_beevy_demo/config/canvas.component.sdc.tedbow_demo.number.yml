@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tedbow_demo
+active_version: b3e3279f098a9a1b
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        number:
+          required: false
+          field_type: float
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 42.0
+          expression: ℹ︎float␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+  8945ac7a81820302:
+    settings:
+      prop_field_definitions:
+        number:
+          required: false
+          field_type: float
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value: null
+          expression: ℹ︎float␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: Number
+id: sdc.tedbow_demo.number
+provider: tedbow_demo
+source: sdc
+source_local_id: 'tedbow_demo:number'

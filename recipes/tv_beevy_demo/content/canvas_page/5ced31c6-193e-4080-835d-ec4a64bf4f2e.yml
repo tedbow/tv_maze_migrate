@@ -1,0 +1,127 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: 5ced31c6-193e-4080-835d-ec4a64bf4f2e
+  default_langcode: en
+  depends:
+    d52cb770-a3ba-4b80-8dcb-c893f1c1aa55: file
+    66ca8917-deba-4b3a-96d3-6b1f5b1663d6: media
+    55fbe038-27ef-470d-9cbd-04cada67723b: file
+    2b5e512e-ba1a-45f1-b7c2-4dd32c126095: media
+default:
+  revision_user:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'TV Beevy'
+  components:
+    -
+      uuid: 1c758271-452e-44e6-8e75-95b8b4a5e374
+      component_id: sdc.tedbow_demo.dd-hero
+      inputs:
+        image:
+          CANVAS_ENTITY_REFERENCE:
+            target_uuid: 66ca8917-deba-4b3a-96d3-6b1f5b1663d6
+            target_type: media
+        image_position: first
+        ratio: auto
+        link:
+          uri: 'https://example.com'
+          options: {  }
+        content_position: center
+        content_width: full
+    -
+      parent_uuid: 1c758271-452e-44e6-8e75-95b8b4a5e374
+      slot: body
+      uuid: 45b10b13-a8be-4c03-822e-dcf7b807a6dd
+      component_id: sdc.tedbow_demo.heading
+      inputs:
+        text: 'The Hive Mind🧠'
+        style: primary
+        element: h3
+    -
+      parent_uuid: 1c758271-452e-44e6-8e75-95b8b4a5e374
+      slot: body
+      uuid: 08e4235e-989d-4626-b59f-771fe0383dd0
+      component_id: sdc.tedbow_demo.dd-text
+      inputs:
+        text:
+          value: '<p>Ever wonder what everyone else is watching? Tap into the <strong>Hive Mind</strong>—our real-time community pulse that tracks trending hits, underground favorites, and the shows that have the whole swarm talking. It’s not just an algorithm; it’s the collective wisdom of thousands of TV fanatics!</p>'
+          format: canvas_html_block
+        text_size: normal
+    -
+      parent_uuid: 1c758271-452e-44e6-8e75-95b8b4a5e374
+      slot: body
+      uuid: b3248b7d-df64-4188-98d6-498914ceac94
+      component_id: sdc.tedbow_demo.dd-button
+      inputs:
+        variant: primary
+        size: medium
+        disabled: false
+        label: 'Learn more about the Hive!'
+    -
+      uuid: 7b5c716a-aa15-4670-934c-fbbc6d5e4380
+      component_id: sdc.tedbow_demo.dd-hero
+      inputs:
+        image:
+          CANVAS_ENTITY_REFERENCE:
+            target_uuid: 2b5e512e-ba1a-45f1-b7c2-4dd32c126095
+            target_type: media
+        image_position: second
+        ratio: auto
+        link:
+          uri: 'https://example.com'
+          options: {  }
+        content_position: center
+        content_width: full
+    -
+      parent_uuid: 7b5c716a-aa15-4670-934c-fbbc6d5e4380
+      slot: body
+      uuid: 2ef13ae3-95f6-4e64-ae20-24cf021da2a9
+      component_id: sdc.tedbow_demo.heading
+      inputs:
+        text: 'Your shows are your Friends'
+        style: primary
+        element: h3
+    -
+      parent_uuid: 7b5c716a-aa15-4670-934c-fbbc6d5e4380
+      slot: body
+      uuid: 5d530eff-b4f3-4380-8e99-663528b1b72a
+      component_id: sdc.tedbow_demo.dd-text
+      inputs:
+        text:
+          value: "<p>Let’s be honest: real people are high-maintenance and rarely come with a 'skip intro' button. That’s why at TV Beevy, we believe your shows are your <em>real</em> friends. They don’t ask you to help them move, they never forget your birthday, and unlike your roommate, they actually stay quiet when you’re trying to sleep. Who needs a social life when you have a Season 4 cliffhanger?</p>"
+          format: canvas_html_block
+        text_size: normal
+    -
+      parent_uuid: 7b5c716a-aa15-4670-934c-fbbc6d5e4380
+      slot: body
+      uuid: 836fdbd2-bb39-4b59-ab6a-c69b52d6c60a
+      component_id: sdc.tedbow_demo.dd-button
+      inputs:
+        variant: primary
+        label: 'Meet your new friends!'
+        size: medium
+        disabled: false
+    -
+      uuid: 8dc0bfe1-a8b2-4952-87d7-071cf8392e93
+      component_id: block.views_block.shows-block_1
+      inputs:
+        label: 'Show teasers'
+        label_display: '0'
+        views_label: ''
+        items_per_page: null
+  path:
+    -
+      alias: /tv-beevy
+      langcode: en
+  revision_translation_affected:
+    -
+      value: true

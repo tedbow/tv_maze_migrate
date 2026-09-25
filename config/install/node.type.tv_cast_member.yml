@@ -6,7 +6,7 @@ dependencies:
 type: tv_cast_member
 name: 'TV Cast Member'
 description: 'A cast member (actor/character pairing) imported from TV Maze.'
-help: ''
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false

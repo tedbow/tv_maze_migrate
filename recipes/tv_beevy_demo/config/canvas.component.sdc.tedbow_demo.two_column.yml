@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+  theme:
+    - tedbow_demo
+active_version: f90c1f6cfb2fc04a
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        width:
+          required: true
+          field_type: list_integer
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: 25
+          expression: ℹ︎list_integer␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions:
+        column_one:
+          title: 'Column One'
+          description: 'The contents of the first column.'
+          examples:
+            - '<p>This is column 1 content</p>'
+        column_two:
+          title: 'Column Two'
+          description: 'The contents of the second column.'
+          examples:
+            - '<p>This is column 2 content</p>'
+label: 'Two Column'
+id: sdc.tedbow_demo.two_column
+provider: tedbow_demo
+source: sdc
+source_local_id: 'tedbow_demo:two_column'

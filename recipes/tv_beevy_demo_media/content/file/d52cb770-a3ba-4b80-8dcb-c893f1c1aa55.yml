@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: d52cb770-a3ba-4b80-8dcb-c893f1c1aa55
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: hive_mind.png
+  uri:
+    -
+      value: 'public://2026-03/hive_mind.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 2353803
+  status:
+    -
+      value: true

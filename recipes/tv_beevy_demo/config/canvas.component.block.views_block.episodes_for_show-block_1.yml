@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.episodes_for_show
+  module:
+    - views
+active_version: f867c6f1977d70d1
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:episodes_for_show-block_1'
+        label: 'Episodes for show'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Episodes for show'
+id: block.views_block.episodes_for_show-block_1
+provider: views
+source: block
+source_local_id: 'views_block:episodes_for_show-block_1'

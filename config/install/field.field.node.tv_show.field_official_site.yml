@@ -14,6 +14,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  title: optional
+  title: 1
   link_type: 17
 field_type: link

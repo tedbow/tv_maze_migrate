@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: f40457fd-aa98-4af8-a928-56e303748f4f
+  bundle: image
+  default_langcode: en
+  depends:
+    6425bc9f-a374-44b0-b39a-46378116426f: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: livingroom_background.png
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: background
+      title: ''
+      width: 2816
+      height: 1536
+      entity: 6425bc9f-a374-44b0-b39a-46378116426f

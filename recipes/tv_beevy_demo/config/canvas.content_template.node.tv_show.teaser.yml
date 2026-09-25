@@ -1,0 +1,76 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tedbow_demo.dd-button
+    - canvas.component.sdc.tedbow_demo.dd-hero
+    - canvas.component.sdc.tedbow_demo.dd-text
+    - canvas.component.sdc.tedbow_demo.heading
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tv_show.field_show_image
+    - field.field.node.tv_show.field_summary
+    - image.style.canvas_parametrized_width
+    - node.type.tv_show
+  module:
+    - file
+    - node
+    - options
+id: node.tv_show.teaser
+content_entity_type_id: node
+content_entity_type_bundle: tv_show
+content_entity_type_view_mode: teaser
+component_tree:
+  '0:b839d99e-4588-4071-a797-9da6c66a2112':
+    uuid: b839d99e-4588-4071-a797-9da6c66a2112
+    component_id: sdc.tedbow_demo.dd-hero
+    component_version: e316557cc7ddcb7c
+    inputs:
+      image:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_show_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      image_position: first
+      ratio: auto
+      link:
+        sourceType: host-entity-url
+        absolute: false
+      content_position: center
+      content_width: full
+  '0:body:0:09f0b05d-a819-4702-b799-ff4aad99e319':
+    parent_uuid: b839d99e-4588-4071-a797-9da6c66a2112
+    slot: body
+    uuid: 09f0b05d-a819-4702-b799-ff4aad99e319
+    component_id: sdc.tedbow_demo.heading
+    component_version: 8c01a2bdb897a810
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝title␞␟value'
+      style: primary
+      element: h3
+  '0:body:1:fa5d8aa9-82a8-438f-abb5-3d0e9f93fede':
+    parent_uuid: b839d99e-4588-4071-a797-9da6c66a2112
+    slot: body
+    uuid: fa5d8aa9-82a8-438f-abb5-3d0e9f93fede
+    component_id: sdc.tedbow_demo.dd-text
+    component_version: 9064d162a1b2592f
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_show␝field_summary␞␟processed'
+      text_size: normal
+  '0:body:2:f8b0ee22-1198-45e2-bd7c-5b16c9c23e00':
+    parent_uuid: b839d99e-4588-4071-a797-9da6c66a2112
+    slot: body
+    uuid: f8b0ee22-1198-45e2-bd7c-5b16c9c23e00
+    component_id: sdc.tedbow_demo.dd-button
+    component_version: a20da296a37388a8
+    inputs:
+      variant: primary
+      label: 'View Show'
+      href:
+        sourceType: host-entity-url
+        absolute: false
+      size: medium
+      disabled: false
+exposed_slots: {  }
+page_variant: null

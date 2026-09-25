@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: cda19ce3-e898-41be-9ef1-b6274a665b0d
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Latest Episodes'
+  components:
+    -
+      uuid: f2c1fa1d-8f3a-41e9-8b9c-50821649de75
+      component_id: sdc.tedbow_demo.dd-text
+      inputs:
+        text:
+          value: '<p>Fresh from the hive: the newest episodes across all of our shows.</p>'
+          format: canvas_html_block
+        text_size: lg
+    -
+      uuid: dbfad5f1-eb6f-4c7c-a1bf-39d757096588
+      component_id: block.views_block.newest_episode_list-block_2
+      inputs:
+        label: 'Latest episodes'
+        label_display: '0'
+        views_label: ''
+        items_per_page: null
+  path:
+    -
+      alias: /episodes
+      langcode: en
+  revision_translation_affected:
+    -
+      value: true

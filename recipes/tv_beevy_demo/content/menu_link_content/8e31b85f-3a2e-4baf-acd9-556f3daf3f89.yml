@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 8e31b85f-3a2e-4baf-acd9-556f3daf3f89
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    ed866e3b-2795-4be6-8eac-8b0afdfa563d: canvas_page
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Beehive Reviews'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      title: null
+      options: {  }
+      target_uuid: ed866e3b-2795-4be6-8eac-8b0afdfa563d
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

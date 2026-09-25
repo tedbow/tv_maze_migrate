@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tedbow_demo
+active_version: a160fce970033149
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        branding:
+          title: Branding
+          description: 'Site branding, for example the site logo and name.'
+        primary_menu:
+          title: 'Primary menu'
+          description: 'The main navigation menu.'
+        secondary_menu:
+          title: 'Secondary menu'
+          description: 'Secondary navigation, for example the user account menu and search.'
+label: 'Site Header'
+id: sdc.tedbow_demo.site-header
+provider: tedbow_demo
+source: sdc
+source_local_id: 'tedbow_demo:site-header'

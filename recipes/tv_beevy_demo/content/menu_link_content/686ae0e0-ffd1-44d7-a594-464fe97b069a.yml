@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 686ae0e0-ffd1-44d7-a594-464fe97b069a
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    cb141985-ce45-4f9d-90a8-4fa9382e9dc7: canvas_page
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Community Buzz'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      title: null
+      options: {  }
+      target_uuid: cb141985-ce45-4f9d-90a8-4fa9382e9dc7
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

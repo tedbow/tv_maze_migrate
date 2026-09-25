@@ -58,6 +58,26 @@ Migration config is copied to the database on install. To modify migrations afte
 drush cr
 ```
 
+### Demo Recipes (`recipes/`)
+
+The module only ships migration config. Anything built in the Canvas
+site-building demo (views, view modes, Canvas templates, pattern, page variant,
+pages, menu links) belongs in `recipes/tv_beevy_demo`, not `config/install`.
+
+- `tv_beevy_demo`: config in `config/`, Canvas pages and menu links in
+  `content/`. Uses `strict: false` and `config.import` for module config
+  entities, because recipes install modules without their config entities.
+- `tv_beevy_demo_media`: the media items and image files, applied first
+  because Canvas config validation rejects media references that don't exist
+  yet.
+- Canvas config trees store media as serial `target_id`s. On a fresh site the
+  media get IDs in content filename (UUID) order: `2b5e…` = 1, `66ca…` = 2,
+  `f404…` = 3. Keep `target_id`s in `canvas.pattern.heroimageleft` and
+  `canvas.page_variant.tv_beevy` in sync if media change.
+- Export content with core: `php core/scripts/drupal content:export <type> <id> -W --dir=…`.
+- Test on a fresh Standard install:
+  `drush recipe modules/custom/tv_maze_migrate/recipes/tv_beevy_demo && drush migrate:import --group=tv_maze`.
+
 ## API Notes
 
 - TV Maze rate limits: ~20 requests/10 seconds

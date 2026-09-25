@@ -6,7 +6,7 @@ dependencies:
 type: tv_episode
 name: 'TV Episode'
 description: 'A television episode imported from TV Maze.'
-help: ''
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false

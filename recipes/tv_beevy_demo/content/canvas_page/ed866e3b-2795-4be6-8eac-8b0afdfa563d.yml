@@ -1,0 +1,31 @@
+_meta:
+  version: '1.0'
+  entity_type: canvas_page
+  uuid: ed866e3b-2795-4be6-8eac-8b0afdfa563d
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  owner:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Beehive Reviews'
+  components:
+    -
+      uuid: 5ad13172-110e-4f98-9818-93960b5a7485
+      component_id: sdc.tedbow_demo.dd-text
+      inputs:
+        text:
+          value: '<p>Honest, buzzing reviews of the shows the hive can not stop talking about. Coming soon!</p>'
+          format: canvas_html_block
+        text_size: lg
+  path:
+    -
+      alias: /reviews
+      langcode: en
+  revision_translation_affected:
+    -
+      value: true

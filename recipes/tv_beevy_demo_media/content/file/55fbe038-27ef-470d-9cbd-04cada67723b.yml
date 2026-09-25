@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 55fbe038-27ef-470d-9cbd-04cada67723b
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: Gemini_Generated_Image_bxayngbxayngbxay.png
+  uri:
+    -
+      value: 'public://2026-03/Gemini_Generated_Image_bxayngbxayngbxay.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 8310376
+  status:
+    -
+      value: true

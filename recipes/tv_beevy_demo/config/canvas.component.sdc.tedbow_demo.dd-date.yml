@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+  theme:
+    - tedbow_demo
+active_version: 5c91788ed564ca74
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        date:
+          required: false
+          field_type: datetime
+          field_storage_settings:
+            datetime_type: date
+          field_instance_settings: {  }
+          field_widget: datetime_default
+          default_value: null
+          expression: ℹ︎datetime␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: Date
+id: sdc.tedbow_demo.dd-date
+provider: tedbow_demo
+source: sdc
+source_local_id: 'tedbow_demo:dd-date'

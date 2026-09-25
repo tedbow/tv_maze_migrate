@@ -1,0 +1,50 @@
+name: 'TV Beevy demo'
+description: 'The finished TV Beevy Drupal Canvas site-building demo: views, content templates, pattern, page template (page variant), pages, media and main menu. Apply to a fresh site, then run the tv_maze migrations.'
+type: Site
+recipes:
+  # Media must exist before the pattern and page template config that uses it.
+  - tv_beevy_demo_media
+install:
+  - canvas
+  - media_library
+  - menu_link_content
+  - path
+  - views_block_override
+  - entity_block
+  - tv_maze_migrate
+  - tedbow_demo
+config:
+  # Canvas creates components for the theme's SDCs and for blocks while the
+  # recipe is applied. Skip config that already exists instead of requiring it
+  # to be identical.
+  strict: false
+  # Recipes install modules without their config entities; import them.
+  import:
+    canvas: '*'
+    menu_link_content: '*'
+    tv_maze_migrate: '*'
+    views_block_override: '*'
+    entity_block: '*'
+    tedbow_demo: '*'
+  actions:
+    system.theme:
+      simpleConfigUpdate:
+        default: tedbow_demo
+    system.site:
+      simpleConfigUpdate:
+        name: 'TV Beevy'
+        slogan: 'Join the Hive!'
+        page.front: /tv-beevy
+    canvas.settings:
+      simpleConfigUpdate:
+        default_page_variant: tv_beevy
+    # Put the standard profile's "Home" link first in the main menu.
+    core.menu.static_menu_link_overrides:
+      simpleConfigUpdate:
+        definitions:
+          standard__front_page:
+            menu_name: main
+            parent: ''
+            weight: -50
+            expanded: false
+            enabled: true

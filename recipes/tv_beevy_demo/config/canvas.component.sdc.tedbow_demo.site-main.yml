@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tedbow_demo
+active_version: 5f043b9f7fc582cd
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        sidebar_grid:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: false
+          expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions:
+        hero:
+          title: Hero
+          description: 'Full width area above the main content.'
+        highlighted:
+          title: Highlighted
+          description: 'Status messages, local tasks and actions.'
+        breadcrumb:
+          title: Breadcrumb
+        content_above:
+          title: 'Content above'
+          description: 'For example the page title.'
+        content:
+          title: Content
+          description: 'The page content.'
+        sidebar:
+          title: Sidebar
+        content_below:
+          title: 'Content below'
+        social:
+          title: 'Social bar'
+  62d63ff2207d807f:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        hero:
+          title: Hero
+          description: 'Full width area above the main content.'
+        highlighted:
+          title: Highlighted
+          description: 'Status messages, local tasks and actions.'
+        breadcrumb:
+          title: Breadcrumb
+        content_above:
+          title: 'Content above'
+          description: 'For example the page title.'
+        content:
+          title: Content
+          description: 'The page content.'
+        sidebar:
+          title: Sidebar
+        content_below:
+          title: 'Content below'
+        social:
+          title: 'Social bar'
+label: 'Site Main'
+id: sdc.tedbow_demo.site-main
+provider: tedbow_demo
+source: sdc
+source_local_id: 'tedbow_demo:site-main'

@@ -2,14 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - node.type.tv_episode
+    - node.type.tv_show
   module:
     - node
     - user
-id: show_episodes
-label: 'Show Episodes'
+id: episodes_for_show
+label: 'Episodes for show'
 module: views
-description: 'Displays episodes for a TV show'
+description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -20,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Episodes
+      title: 'Latest episode for Show'
       fields:
         title:
           id: title
@@ -47,7 +49,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -70,23 +72,10 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: mini
+        type: some
         options:
           offset: 0
-          items_per_page: 10
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
+          items_per_page: 5
       exposed_form:
         type: basic
         options:
@@ -106,32 +95,22 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        field_season_value:
-          id: field_season_value
-          table: node__field_season
-          field: field_season_value
+        created:
+          id: created
+          table: node_field_data
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: standard
-          order: ASC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-        field_episode_number_value:
-          id: field_episode_number_value
-          table: node__field_episode_number
-          field: field_episode_number_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: standard
-          order: ASC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
+          granularity: second
       arguments:
         field_tv_show_target_id:
           id: field_tv_show_target_id
@@ -140,7 +119,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: default
           exception:
             value: all
@@ -166,7 +145,7 @@ display:
           validate_options:
             bundles:
               tv_show: tv_show
-            access: true
+            access: false
             operation: view
             multiple: 0
           break_phrase: false
@@ -192,17 +171,11 @@ display:
           plugin_id: bundle
           value:
             tv_episode: tv_episode
-          group: 1
       style:
         type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
       row:
         type: 'entity:node'
         options:
-          relationship: none
           view_mode: teaser
       query:
         type: views_query
@@ -222,7 +195,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -233,14 +205,12 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_description: 'Show Episodes'
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

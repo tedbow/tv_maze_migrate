@@ -1,0 +1,97 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+  theme:
+    - tedbow_demo
+active_version: 0a1f1e0b8500e101
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Genre
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        value:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Drama
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        link:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value: null
+          expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
+    fallback_metadata:
+      slot_definitions: {  }
+  40eba41bcd9b8542:
+    settings:
+      prop_field_definitions:
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Genre
+          expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
+        value:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Drama
+          expression: ℹ︎string␟value
+          derived_schema_metadata: {  }
+        link:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: /genre/drama
+              options: {  }
+          expression: ℹ︎link␟url
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Label Value'
+id: sdc.tedbow_demo.dd-label-value
+provider: tedbow_demo
+source: sdc
+source_local_id: 'tedbow_demo:dd-label-value'

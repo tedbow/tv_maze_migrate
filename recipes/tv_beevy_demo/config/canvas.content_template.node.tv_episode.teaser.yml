@@ -1,0 +1,145 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.tedbow_demo.dd-button
+    - canvas.component.sdc.tedbow_demo.dd-hero
+    - canvas.component.sdc.tedbow_demo.dd-label-slot-value
+    - canvas.component.sdc.tedbow_demo.dd-text
+    - canvas.component.sdc.tedbow_demo.heading
+    - canvas.component.sdc.tedbow_demo.number
+    - canvas.component.sdc.tedbow_demo.two_column
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tv_episode.field_episode_image
+    - field.field.node.tv_episode.field_episode_number
+    - field.field.node.tv_episode.field_episode_summary
+    - field.field.node.tv_episode.field_runtime
+    - field.field.node.tv_episode.field_season
+    - image.style.canvas_parametrized_width
+    - node.type.tv_episode
+  module:
+    - file
+    - link
+    - node
+    - options
+id: node.tv_episode.teaser
+content_entity_type_id: node
+content_entity_type_bundle: tv_episode
+content_entity_type_view_mode: teaser
+component_tree:
+  '0:856dfa67-87e2-4356-9a70-46456c2810ab':
+    uuid: 856dfa67-87e2-4356-9a70-46456c2810ab
+    component_id: sdc.tedbow_demo.dd-hero
+    component_version: e316557cc7ddcb7c
+    inputs:
+      image:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_episode␝field_episode_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}'
+      image_position: first
+      ratio: auto
+      link:
+        uri: 'https://example.com'
+        options: {  }
+      content_position: center
+      content_width: full
+  '0:body:0:bebbe41e-a2aa-4b05-bced-aec15838d811':
+    parent_uuid: 856dfa67-87e2-4356-9a70-46456c2810ab
+    slot: body
+    uuid: bebbe41e-a2aa-4b05-bced-aec15838d811
+    component_id: sdc.tedbow_demo.heading
+    component_version: 8c01a2bdb897a810
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_episode␝title␞␟value'
+      style: primary
+      element: h3
+  '0:body:1:b66ae120-9328-4bf9-83f8-c79292550478':
+    parent_uuid: 856dfa67-87e2-4356-9a70-46456c2810ab
+    slot: body
+    uuid: b66ae120-9328-4bf9-83f8-c79292550478
+    component_id: sdc.tedbow_demo.dd-text
+    component_version: 9064d162a1b2592f
+    inputs:
+      text:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_episode␝field_episode_summary␞␟processed'
+      text_size: normal
+  '0:body:2:column_one:0:0c72b862-6770-4560-8508-1d0836233d43':
+    parent_uuid: ecade576-8a26-454c-a388-f7da4735cf74
+    slot: column_one
+    uuid: 0c72b862-6770-4560-8508-1d0836233d43
+    component_id: sdc.tedbow_demo.dd-label-slot-value
+    component_version: 794511a24b0deb43
+    inputs:
+      label: Season
+  '0:body:2:column_one:0:value:0:df123b62-fc11-469c-b76e-eb7281e4d26d':
+    parent_uuid: 0c72b862-6770-4560-8508-1d0836233d43
+    slot: value
+    uuid: df123b62-fc11-469c-b76e-eb7281e4d26d
+    component_id: sdc.tedbow_demo.number
+    component_version: b3e3279f098a9a1b
+    inputs:
+      number:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_episode␝field_season␞␟value'
+  '0:body:2:column_two:0:594db166-4475-429a-91ed-40374bd25ab4':
+    parent_uuid: ecade576-8a26-454c-a388-f7da4735cf74
+    slot: column_two
+    uuid: 594db166-4475-429a-91ed-40374bd25ab4
+    component_id: sdc.tedbow_demo.dd-label-slot-value
+    component_version: 794511a24b0deb43
+    inputs:
+      label: Episode
+  '0:body:2:column_two:0:value:0:73e69751-0809-4048-8840-333621e03878':
+    parent_uuid: 594db166-4475-429a-91ed-40374bd25ab4
+    slot: value
+    uuid: 73e69751-0809-4048-8840-333621e03878
+    component_id: sdc.tedbow_demo.number
+    component_version: b3e3279f098a9a1b
+    inputs:
+      number:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_episode␝field_episode_number␞␟value'
+  '0:body:2:ecade576-8a26-454c-a388-f7da4735cf74':
+    parent_uuid: 856dfa67-87e2-4356-9a70-46456c2810ab
+    slot: body
+    uuid: ecade576-8a26-454c-a388-f7da4735cf74
+    component_id: sdc.tedbow_demo.two_column
+    component_version: f90c1f6cfb2fc04a
+    inputs:
+      width: 50
+  '0:body:3:3f480278-648a-4630-90f8-02ed263b61ab':
+    parent_uuid: 856dfa67-87e2-4356-9a70-46456c2810ab
+    slot: body
+    uuid: 3f480278-648a-4630-90f8-02ed263b61ab
+    component_id: sdc.tedbow_demo.dd-label-slot-value
+    component_version: 794511a24b0deb43
+    inputs:
+      label: Runtime
+  '0:body:3:value:0:e7db54f6-e53f-41d5-8af6-68ffa36bc920':
+    parent_uuid: 3f480278-648a-4630-90f8-02ed263b61ab
+    slot: value
+    uuid: e7db54f6-e53f-41d5-8af6-68ffa36bc920
+    component_id: sdc.tedbow_demo.number
+    component_version: b3e3279f098a9a1b
+    inputs:
+      number:
+        sourceType: entity-field
+        expression: 'ℹ︎␜entity:node:tv_episode␝field_runtime␞␟value'
+  '0:body:4:dffae5bb-f787-4517-9ca4-6f4dc7dd459e':
+    parent_uuid: 856dfa67-87e2-4356-9a70-46456c2810ab
+    slot: body
+    uuid: dffae5bb-f787-4517-9ca4-6f4dc7dd459e
+    component_id: sdc.tedbow_demo.dd-button
+    component_version: a20da296a37388a8
+    inputs:
+      variant: primary
+      label: 'Learn more'
+      href:
+        sourceType: host-entity-url
+        absolute: false
+      size: medium
+      disabled: false
+exposed_slots: {  }
+page_variant: null

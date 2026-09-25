@@ -1,0 +1,5 @@
+name: 'TV Beevy demo media'
+description: 'Images used by the TV Beevy demo pages, pattern and page template. Applied before the demo config because Canvas config references these media items.'
+type: Content
+recipes:
+  - core/recipes/image_media_type

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.show_season
+label: 'Show Season'
+description: null
+targetEntityType: node
+cache: true

@@ -1,15 +1,17 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - node.type.tv_cast_member
+    - core.entity_view_mode.node.teaser
+    - node.type.tv_episode
+    - node.type.tv_show
   module:
     - node
     - user
-id: show_cast
-label: 'Show Cast'
+id: show_episodes
+label: 'Show Episodes'
 module: views
-description: 'Displays cast members for a TV show'
+description: 'Displays episodes for a TV show'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -20,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Cast
+      title: Episodes
       fields:
         title:
           id: title
@@ -106,15 +108,26 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        field_season_value:
+          id: field_season_value
+          table: node__field_season
+          field: field_season_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        field_episode_number_value:
+          id: field_episode_number_value
+          table: node__field_episode_number
+          field: field_episode_number_value
+          relationship: none
+          group_type: group
+          admin_label: ''
           plugin_id: standard
           order: ASC
           expose:
@@ -180,7 +193,7 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            tv_cast_member: tv_cast_member
+            tv_episode: tv_episode
           group: 1
       style:
         type: default
@@ -222,7 +235,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_description: 'Show Cast'
+      block_description: 'Show Episodes'
     cache_metadata:
       max-age: -1
       contexts:
