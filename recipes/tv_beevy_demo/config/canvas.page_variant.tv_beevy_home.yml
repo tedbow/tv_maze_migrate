@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.help_block
+    - canvas.component.block.local_actions_block
+    - canvas.component.block.local_tasks_block
+    - canvas.component.block.system_menu_block.main
+    - canvas.component.block.system_messages_block
+    - canvas.component.marker.page_content
+    - canvas.component.sdc.tedbow_demo.site-footer
+    - canvas.component.sdc.tedbow_demo.site-main
+id: tv_beevy_home
+label: 'Home page'
+description: 'Site header, main content and footer built from Canvas components.'
+component_tree:
+  534e75e7-5254-40d5-8071-fa8918e958fe:
+    uuid: 534e75e7-5254-40d5-8071-fa8918e958fe
+    component_id: sdc.tedbow_demo.site-main
+    component_version: 5f043b9f7fc582cd
+    inputs:
+      sidebar_grid: false
+  5aa44310-fb38-4e00-8da7-2687d00af0aa:
+    parent_uuid: 534e75e7-5254-40d5-8071-fa8918e958fe
+    slot: highlighted
+    uuid: 5aa44310-fb38-4e00-8da7-2687d00af0aa
+    component_id: block.system_messages_block
+    component_version: 0fd5234097704a5d
+    inputs:
+      label: 'Status messages'
+      label_display: '0'
+  24b150e5-e5c1-4226-96dc-7169621acc00:
+    parent_uuid: 534e75e7-5254-40d5-8071-fa8918e958fe
+    slot: highlighted
+    uuid: 24b150e5-e5c1-4226-96dc-7169621acc00
+    component_id: block.local_actions_block
+    component_version: 29753123eb31b8ab
+    inputs:
+      label: 'Primary admin actions'
+      label_display: '0'
+  8741fb9a-cd13-4e3a-973d-e857dab1d307:
+    parent_uuid: 534e75e7-5254-40d5-8071-fa8918e958fe
+    slot: highlighted
+    uuid: 8741fb9a-cd13-4e3a-973d-e857dab1d307
+    component_id: block.local_tasks_block
+    component_version: 429966cebad152ba
+    inputs:
+      label: 'Primary tabs'
+      label_display: '0'
+      primary: true
+      secondary: false
+  cf92e840-5074-4f5a-b516-3305e0f4659b:
+    parent_uuid: 534e75e7-5254-40d5-8071-fa8918e958fe
+    slot: highlighted
+    uuid: cf92e840-5074-4f5a-b516-3305e0f4659b
+    component_id: block.local_tasks_block
+    component_version: 429966cebad152ba
+    inputs:
+      label: 'Secondary tabs'
+      label_display: '0'
+      primary: false
+      secondary: true
+  7a75a584-a9b1-400f-a667-88251ef0419f:
+    parent_uuid: 534e75e7-5254-40d5-8071-fa8918e958fe
+    slot: content_above
+    uuid: 7a75a584-a9b1-400f-a667-88251ef0419f
+    component_id: block.help_block
+    component_version: f0baefd21cddb437
+    inputs:
+      label: Help
+      label_display: '0'
+  9aa9ec4a-efb6-4c93-b9b5-bef811a8088d:
+    parent_uuid: 534e75e7-5254-40d5-8071-fa8918e958fe
+    slot: content
+    uuid: 9aa9ec4a-efb6-4c93-b9b5-bef811a8088d
+    component_id: marker.page_content
+    component_version: 3b12c0b99a6caecc
+    inputs: {  }
+  244ade70-33be-4a04-bd42-a0f2b323f8f4:
+    uuid: 244ade70-33be-4a04-bd42-a0f2b323f8f4
+    component_id: sdc.tedbow_demo.site-footer
+    component_version: 309b9aa93e4e87e8
+    inputs: {  }
+  7799b08f-82a6-4cda-bc83-342416ef9eeb:
+    parent_uuid: 244ade70-33be-4a04-bd42-a0f2b323f8f4
+    slot: footer_bottom
+    uuid: 7799b08f-82a6-4cda-bc83-342416ef9eeb
+    component_id: block.system_menu_block.main
+    component_version: 023ff7ba63f80798
+    inputs:
+      label: 'Main navigation'
+      label_display: '0'
+      level: 1
+      depth: null
+      expand_all_items: false
