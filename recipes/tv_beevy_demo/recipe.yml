@@ -48,3 +48,15 @@ config:
             weight: -50
             expanded: false
             enabled: true
+    # Canvas disables core-provided block components when it creates them, and
+    # strict: false skips the recipe's existing copies. Enable the ones placed
+    # in the page template so Layers shows their labels and the library lists
+    # them.
+    canvas.component.block.help_block:
+      setStatus: true
+    canvas.component.block.local_actions_block:
+      setStatus: true
+    canvas.component.block.local_tasks_block:
+      setStatus: true
+    canvas.component.block.system_menu_block.account:
+      setStatus: true
