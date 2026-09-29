@@ -15,26 +15,12 @@ dependencies:
     - canvas.component.block.system_powered_by_block
     - canvas.component.block.views_block.newest_episode_list-block_1
     - canvas.component.marker.page_content
-    - canvas.component.sdc.tedbow_demo.dd-button
-    - canvas.component.sdc.tedbow_demo.dd-hero
-    - canvas.component.sdc.tedbow_demo.dd-text
     - canvas.component.sdc.tedbow_demo.heading
     - canvas.component.sdc.tedbow_demo.site-footer
     - canvas.component.sdc.tedbow_demo.site-header
     - canvas.component.sdc.tedbow_demo.site-main
-    - field.field.media.image.field_media_image
-    - filter.format.canvas_html_block
-    - image.style.canvas_parametrized_width
-    - media.type.image
-  content:
-    - 'file:file:6425bc9f-a374-44b0-b39a-46378116426f'
-    - 'media:image:f40457fd-aa98-4af8-a928-56e303748f4f'
   module:
-    - file
-    - link
-    - media
     - options
-    - text
 id: tv_beevy
 label: 'TV Beevy'
 description: 'Site header, main content and footer built from Canvas components.'
@@ -44,129 +30,6 @@ component_tree:
     component_id: sdc.tedbow_demo.site-header
     component_version: a160fce970033149
     inputs: {  }
-  bfdc429d-2074-43ae-b32b-ec367d996d46:
-    uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
-    component_id: sdc.tedbow_demo.site-main
-    component_version: 5f043b9f7fc582cd
-    inputs:
-      sidebar_grid: false
-  84a5cbfa-11ea-4164-a7a5-a336d27c66e9:
-    uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
-    component_id: sdc.tedbow_demo.site-footer
-    component_version: 309b9aa93e4e87e8
-    inputs: {  }
-  efda1157-d559-411e-bd65-905381f7c171:
-    parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
-    slot: content
-    uuid: efda1157-d559-411e-bd65-905381f7c171
-    component_id: marker.page_content
-    component_version: 3b12c0b99a6caecc
-    inputs: {  }
-  f7ef472b-a7b3-43b1-9f75-03f9503508c6:
-    parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
-    slot: breadcrumb
-    uuid: f7ef472b-a7b3-43b1-9f75-03f9503508c6
-    component_id: block.system_breadcrumb_block
-    component_version: ad6359c331fc7c45
-    inputs:
-      label: Breadcrumbs
-      label_display: '0'
-  0a02d5c7-5ea4-4d77-8495-76c4a8ca6158:
-    parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
-    slot: content_above
-    uuid: 0a02d5c7-5ea4-4d77-8495-76c4a8ca6158
-    component_id: block.help_block
-    component_version: f0baefd21cddb437
-    inputs:
-      label: Help
-      label_display: '0'
-  9f22b56a-cd38-49a5-a529-0967e9d8e08c:
-    parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
-    slot: content_above
-    uuid: 9f22b56a-cd38-49a5-a529-0967e9d8e08c
-    component_id: block.page_title_block
-    component_version: 90ce139b2d3e2601
-    inputs:
-      label: 'Page title'
-      label_display: '0'
-  178821c9-4c66-4b23-8c6b-26e04c428354:
-    parent_uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
-    slot: footer_bottom
-    uuid: 178821c9-4c66-4b23-8c6b-26e04c428354
-    component_id: sdc.tedbow_demo.heading
-    component_version: 8c01a2bdb897a810
-    inputs:
-      text: 'Newest Episodes'
-      style: secondary
-      element: h1
-  77c5cade-da55-477c-891f-fb431e133d78:
-    parent_uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
-    slot: footer_bottom
-    uuid: 77c5cade-da55-477c-891f-fb431e133d78
-    component_id: block.views_block.newest_episode_list-block_1
-    component_version: ba4c77bc861e1409
-    inputs:
-      label: 'Newest Episode list'
-      label_display: '0'
-      views_label: ''
-      items_per_page: null
-  1ec8b357-a01f-4977-a69f-b011fca511df:
-    parent_uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
-    slot: footer_bottom
-    uuid: 1ec8b357-a01f-4977-a69f-b011fca511df
-    component_id: sdc.tedbow_demo.dd-hero
-    component_version: e316557cc7ddcb7c
-    inputs:
-      image:
-        target_id: '3'
-      image_position: background
-      ratio: 16/9
-      link:
-        uri: 'https://example.com'
-        options: {  }
-      content_position: top-right
-      content_width: half
-  0d4dbecc-ab83-43a9-9c7f-116139794deb:
-    parent_uuid: 1ec8b357-a01f-4977-a69f-b011fca511df
-    slot: body
-    uuid: 0d4dbecc-ab83-43a9-9c7f-116139794deb
-    component_id: sdc.tedbow_demo.heading
-    component_version: 8c01a2bdb897a810
-    inputs:
-      text: 'The Entertainment Hive!'
-      style: primary
-      element: h3
-  c473cb73-14f7-4b76-8bde-3fada123bf5a:
-    parent_uuid: 1ec8b357-a01f-4977-a69f-b011fca511df
-    slot: body
-    uuid: c473cb73-14f7-4b76-8bde-3fada123bf5a
-    component_id: sdc.tedbow_demo.dd-text
-    component_version: 9064d162a1b2592f
-    inputs:
-      text:
-        value: '<p>Discover shows, join the swarm, and get your daily buzz!</p>'
-        format: canvas_html_block
-      text_size: normal
-  9b666888-0664-4c34-ad67-6080c31ea0a4:
-    parent_uuid: 1ec8b357-a01f-4977-a69f-b011fca511df
-    slot: body
-    uuid: 9b666888-0664-4c34-ad67-6080c31ea0a4
-    component_id: sdc.tedbow_demo.dd-button
-    component_version: a20da296a37388a8
-    inputs:
-      variant: primary
-      label: 'Join the HIve!🐝'
-      size: medium
-      disabled: false
-  261aa07b-025d-46b4-aaa6-a109912f589e:
-    parent_uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
-    slot: footer_bottom
-    uuid: 261aa07b-025d-46b4-aaa6-a109912f589e
-    component_id: block.system_powered_by_block
-    component_version: fcc4b9a4f6d6de35
-    inputs:
-      label: 'Powered by Drupal'
-      label_display: '0'
   df6fdca2-49c6-4e18-94be-6dd89238d50f:
     parent_uuid: a3c6cd43-e834-4ecd-a0d1-647b7a466863
     slot: branding
@@ -179,6 +42,46 @@ component_tree:
       use_site_logo: true
       use_site_name: false
       use_site_slogan: false
+  86417e2b-3a7f-4ac2-adb1-baa126c2dd45:
+    parent_uuid: a3c6cd43-e834-4ecd-a0d1-647b7a466863
+    slot: primary_menu
+    uuid: 86417e2b-3a7f-4ac2-adb1-baa126c2dd45
+    component_id: block.system_menu_block.main
+    component_version: 023ff7ba63f80798
+    inputs:
+      label: 'Main navigation'
+      label_display: '0'
+      level: 1
+      depth: null
+      expand_all_items: false
+  53c8e315-f2a7-4859-8f53-18698d6986a4:
+    parent_uuid: a3c6cd43-e834-4ecd-a0d1-647b7a466863
+    slot: secondary_menu
+    uuid: 53c8e315-f2a7-4859-8f53-18698d6986a4
+    component_id: block.system_menu_block.account
+    component_version: 4b3fb59b8eadb12d
+    inputs:
+      label: 'User account menu'
+      label_display: '0'
+      level: 1
+      depth: 1
+      expand_all_items: false
+  63298f27-1431-4bbc-abc6-1324449febaa:
+    parent_uuid: a3c6cd43-e834-4ecd-a0d1-647b7a466863
+    slot: secondary_menu
+    uuid: 63298f27-1431-4bbc-abc6-1324449febaa
+    component_id: block.search_form_block
+    component_version: 66936558a0932f6b
+    inputs:
+      label: 'Search form'
+      label_display: '0'
+      page_id: null
+  bfdc429d-2074-43ae-b32b-ec367d996d46:
+    uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
+    component_id: sdc.tedbow_demo.site-main
+    component_version: 5f043b9f7fc582cd
+    inputs:
+      sidebar_grid: false
   87882a9b-8bee-4c12-839f-6b4f58922223:
     parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
     slot: highlighted
@@ -219,37 +122,72 @@ component_tree:
       label_display: '0'
       primary: false
       secondary: true
-  86417e2b-3a7f-4ac2-adb1-baa126c2dd45:
-    parent_uuid: a3c6cd43-e834-4ecd-a0d1-647b7a466863
-    slot: primary_menu
-    uuid: 86417e2b-3a7f-4ac2-adb1-baa126c2dd45
-    component_id: block.system_menu_block.main
-    component_version: 023ff7ba63f80798
+  f7ef472b-a7b3-43b1-9f75-03f9503508c6:
+    parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
+    slot: breadcrumb
+    uuid: f7ef472b-a7b3-43b1-9f75-03f9503508c6
+    component_id: block.system_breadcrumb_block
+    component_version: ad6359c331fc7c45
     inputs:
-      label: 'Main navigation'
+      label: Breadcrumbs
       label_display: '0'
-      level: 1
-      depth: null
-      expand_all_items: false
-  53c8e315-f2a7-4859-8f53-18698d6986a4:
-    parent_uuid: a3c6cd43-e834-4ecd-a0d1-647b7a466863
-    slot: secondary_menu
-    uuid: 53c8e315-f2a7-4859-8f53-18698d6986a4
-    component_id: block.system_menu_block.account
-    component_version: 4b3fb59b8eadb12d
+  0a02d5c7-5ea4-4d77-8495-76c4a8ca6158:
+    parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
+    slot: content_above
+    uuid: 0a02d5c7-5ea4-4d77-8495-76c4a8ca6158
+    component_id: block.help_block
+    component_version: f0baefd21cddb437
     inputs:
-      label: 'User account menu'
+      label: Help
       label_display: '0'
-      level: 1
-      depth: 1
-      expand_all_items: false
-  038945a5-00a1-4099-a365-e8c9a0f85e9c:
-    parent_uuid: a3c6cd43-e834-4ecd-a0d1-647b7a466863
-    slot: secondary_menu
-    uuid: 038945a5-00a1-4099-a365-e8c9a0f85e9c
-    component_id: block.search_form_block
-    component_version: 66936558a0932f6b
+  9f22b56a-cd38-49a5-a529-0967e9d8e08c:
+    parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
+    slot: content_above
+    uuid: 9f22b56a-cd38-49a5-a529-0967e9d8e08c
+    component_id: block.page_title_block
+    component_version: 90ce139b2d3e2601
     inputs:
-      label: 'Search form (wide)'
+      label: 'Page title'
       label_display: '0'
-      page_id: null
+  efda1157-d559-411e-bd65-905381f7c171:
+    parent_uuid: bfdc429d-2074-43ae-b32b-ec367d996d46
+    slot: content
+    uuid: efda1157-d559-411e-bd65-905381f7c171
+    component_id: marker.page_content
+    component_version: 3b12c0b99a6caecc
+    inputs: {  }
+  84a5cbfa-11ea-4164-a7a5-a336d27c66e9:
+    uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
+    component_id: sdc.tedbow_demo.site-footer
+    component_version: 309b9aa93e4e87e8
+    inputs: {  }
+  178821c9-4c66-4b23-8c6b-26e04c428354:
+    parent_uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
+    slot: footer_bottom
+    uuid: 178821c9-4c66-4b23-8c6b-26e04c428354
+    component_id: sdc.tedbow_demo.heading
+    component_version: 8c01a2bdb897a810
+    inputs:
+      text: 'Newest Episodes'
+      style: secondary
+      element: h1
+  77c5cade-da55-477c-891f-fb431e133d78:
+    parent_uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
+    slot: footer_bottom
+    uuid: 77c5cade-da55-477c-891f-fb431e133d78
+    component_id: block.views_block.newest_episode_list-block_1
+    component_version: ba4c77bc861e1409
+    inputs:
+      label: 'Newest Episode list'
+      label_display: '0'
+      views_label: ''
+      items_per_page: null
+  261aa07b-025d-46b4-aaa6-a109912f589e:
+    parent_uuid: 84a5cbfa-11ea-4164-a7a5-a336d27c66e9
+    slot: footer_bottom
+    uuid: 261aa07b-025d-46b4-aaa6-a109912f589e
+    component_id: block.system_powered_by_block
+    component_version: fcc4b9a4f6d6de35
+    inputs:
+      label: 'Powered by Drupal'
+      label_display: '0'
